@@ -168,7 +168,7 @@ export class AuthenticationService {
         // append authentication
         let tokenResult: ITokenResult = this._localStorage.retrieve(this._settings.tokenStorageKey, true);
         if (tokenResult) {
-            auth.append('Authentication', 'Bearer ' + tokenResult.access_token);
+            auth.append('Authorization', 'Bearer ' + tokenResult.access_token);
         }
         return auth;
     }
